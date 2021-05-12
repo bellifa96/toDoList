@@ -67,4 +67,10 @@ export default class Fire {
     detach() {
         this.unsubscribe()
     }
+
+    getOneList(id,callback) {
+        const ref = this.ref.doc(id).onSnapshot(list => {
+            callback(list.data())
+        })
+    }
 }

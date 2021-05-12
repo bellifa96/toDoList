@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, TextInput, Button} from 'react-native'
+import {View, TextInput, Button, Alert} from 'react-native'
 import {styles} from "../assets/Styles"
 import Fire from "../Fire"
 import OutlineButton from "./OutlineButton";
@@ -10,8 +10,8 @@ function AddToDo(props) {
 
     const handleSubmit = () => {
         const firebase = new Fire(async error => {
-            if (error) return alert('Une erreur est survenue')
-            if (!name) return alert('Vous devez insérer un nom')
+            if (error) return Alert.alert('Oups', 'Une erreur est survenue')
+            if (!name) return Alert.alert('Erreur', 'Vous devez insérer un nom')
 
             props.item.todos.push({name, completed})
             await firebase.updateList(props.item)
@@ -26,13 +26,14 @@ function AddToDo(props) {
 
     return (
         <>
-            <View>
+            <View style={{marginBottom: 20}}>
                 <TextInput
                     style={styles.input}
                     onChangeText={name => setName(name)}
                     value={name}
-                    placeholder="Nom"
+                    placeholder="Nouvelle tâche"
                     keyboardType="default"
+                    multiline={true}
                 />
                 <OutlineButton onClick={() => handleSubmit()} title={'Ajouter'}/>
             </View>

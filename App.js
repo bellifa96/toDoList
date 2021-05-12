@@ -4,15 +4,15 @@ import {createStackNavigator} from '@react-navigation/stack'
 import HomeScreen from "./Views/HomeScreen"
 import {StatusBar} from "expo-status-bar";
 import ListScreen from "./Views/ListScreen";
-import { LogBox } from 'react-native';
+import {Root} from "native-base";
+
 
 const Stack = createStackNavigator()
 
 const App = () => {
-    LogBox.ignoreLogs(['Setting a timer']);
 
     return (
-        <>
+        <Root>
             <StatusBar style="auto"/>
             <NavigationContainer>
                 <Stack.Navigator initialRouteName="Home">
@@ -20,7 +20,7 @@ const App = () => {
                     <Stack.Screen name="List" component={ListScreen}/>
                 </Stack.Navigator>
             </NavigationContainer>
-        </>
+        </Root>
     );
 }
 

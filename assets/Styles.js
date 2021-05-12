@@ -23,6 +23,7 @@ export const styles = StyleSheet.create({
         paddingVertical: 10,
         alignItems: 'center',
         marginBottom: 10,
+        marginTop: 20,
     },
 
     btnOutline: {
@@ -58,16 +59,22 @@ export const styles = StyleSheet.create({
     },
 
     input: {
-        fontSize: 30,
+        fontSize: 28,
         fontWeight: 'bold',
         alignSelf: 'center',
         marginBottom: 10,
+        marginTop: 20,
+    },
+
+    inputTask: {
+        fontSize: 20,
+        marginRight: 50,
+        marginTop: 10,
     },
 
     scrollList: {
         flex: 1,
         flexDirection: 'column',
-        marginTop: 20
     },
 
     listData: {
@@ -114,5 +121,90 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#fff',
         textAlign: 'center'
+    },
+
+    modalView: {
+        alignItems: 'center',
+        margin: 20,
+        marginTop: '50%',
+        backgroundColor: "white",
+        borderRadius: 20,
+        padding: 35,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5
+    },
+
+    button: {
+        borderRadius: 20,
+        padding: 10,
+        elevation: 2
+    },
+
+    buttonOpen: {
+        backgroundColor: "#F194FF",
+    },
+
+    buttonClose: {
+        backgroundColor: "#2196F3",
+    },
+
+    textStyle: {
+        color: "white",
+        fontWeight: "bold",
+        textAlign: "center"
+    },
+
+    modal: {
+        backgroundColor: '#fff',
+        minHeight: 250,
+        position: 'absolute',
+        bottom: 0,
+        width: '100%',
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        paddingHorizontal: 20,
+        paddingVertical: 10,
+        flex: 1,
+        paddingBottom: 50,
+    },
+
+    modalBack: {
+        backgroundColor: 'rgba(0, 0, 0, 0.2)',
+        flex: 1,
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+    },
+
+    modalContent: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: '100%'
+    },
+
+    modalText: {
+        marginBottom: 15,
+        textAlign: "center"
+    },
+
+    completedTrue: {
+        textDecorationLine: 'line-through'
+    },
+
+    completedFalse: {
+        textDecorationLine: 'none'
+
+    },
+
+    trashBtn: {
+        flex: 1,
+        alignItems: 'center',
+        paddingLeft: 10,
+        marginTop: 10,
     }
 })

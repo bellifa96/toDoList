@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, TextInput, TouchableOpacity} from 'react-native'
+import {View, TextInput, TouchableOpacity, Alert} from 'react-native'
 import {styles} from "../assets/Styles"
 import Fire from "../Fire"
 import AddButton from "./AddButton";
@@ -12,8 +12,8 @@ const CreateList = () => {
 
     const handleSubmit = () => {
         const firebase = new Fire(async error => {
-            if (error) return alert('Une erreur est survenue')
-            if (!name) return alert('Vous devez insérer un nom')
+            if (error) return Alert.alert('Oups', 'Une erreur est survenue')
+            if (!name) return Alert.alert('Erreur', 'Vous devez insérer un nom')
 
             await firebase.addList({name, color, todos: []})
             setShowCreate(false)
